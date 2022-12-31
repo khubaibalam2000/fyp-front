@@ -1,0 +1,21 @@
+import { Link } from 'react-router-dom'
+function Check(props) {
+    return (
+        <>
+            {
+                JSON.parse(localStorage.getItem("userinfo")).isAdmin===true ?
+                    <>
+                        <Link to="/addevents">AddEvents</Link>
+                    </>
+                    :
+                    <>
+                        <Link to="/bookedevents">Booked Events</Link>
+                        <Link to="/unbookedevents">Unbooked Events</Link>
+                    </>
+            }
+        </>
+
+    );
+
+}
+export default Check;
