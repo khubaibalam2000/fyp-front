@@ -54,17 +54,18 @@ const Paramedics = () => {
     const [personName, setPersonName] = React.useState([]);
     const [data, setdata] = React.useState();
     const [value,setvalue]=React.useState(false);
-    var url = "http://127.0.0.1:8000/pm/requestMOHForData/?ssn="
+    const url = "http://127.0.0.1:8000/pm/requestMOHForData/?ssn="
       function handleChange(event){
         const {
             target: { value },
         } = event;
-        url += ssn;
+        var url_t = url;
+        url_t += ssn;
         for (var i = 0; i < value.length; i++) {
-            url += "&attributes=" + value[i];
+            url_t += "&attributes=" + value[i];
         }
          Axios({
-            url: url,
+            url: url_t,
             method: "GET"
         }).then(res => {
             console.log(res.data)
@@ -77,8 +78,6 @@ const Paramedics = () => {
         );
         
     };
-      async function Data() {
-    }
     return (
         <div>
             <Header />
