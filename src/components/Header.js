@@ -1,15 +1,7 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container';
-import { Link, useNavigate } from 'react-router-dom'
-import Check from './Check,js';
 function Header(props) {
-    const history = useNavigate();
-    function Logout() {
-        console.log("han mein log out mein agaya hun")
-        localStorage.clear();
-        history("/signup")
-    }
     return (
         <div>
             <Navbar bg="dark" variant="dark">
